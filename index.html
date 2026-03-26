@@ -764,8 +764,103 @@
     font-style: italic;
   }
 
+  /* ── SLIDE 6: QUANTUM COMPUTING ── */
+  #slide-6-quantum {
+    background: linear-gradient(135deg, #0a0f2e 0%, #0d1b4b 60%, #0a2a3a 100%);
+  }
+
+  .quantum-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    max-width: 1100px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .quantum-left .section-number { color: #22d3ee; }
+  .quantum-left .section-title { color: white; }
+
+  .quantum-desc {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    font-weight: 300;
+    margin-top: 1rem;
+  }
+
+  .quantum-challenge-box {
+    margin-top: 1.5rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(34,211,238,0.2);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .quantum-challenge-box h5 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #22d3ee;
+    margin-bottom: 0.6rem;
+  }
+
+  .quantum-challenge-box p {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+
+  .quantum-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .quantum-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(34,211,238,0.12);
+    border-radius: 18px;
+    padding: 1.4rem;
+    transition: all 0.3s;
+  }
+
+  .quantum-card:hover {
+    background: rgba(34,211,238,0.08);
+    border-color: #22d3ee;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(34,211,238,0.1);
+  }
+
+  .quantum-card.span2 {
+    grid-column: span 2;
+    background: linear-gradient(135deg, rgba(34,211,238,0.12), rgba(37,99,235,0.12));
+    border-color: rgba(34,211,238,0.3);
+  }
+
+  .quantum-card-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .quantum-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #22d3ee;
+    margin-bottom: 0.4rem;
+  }
+
+  .quantum-card p {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.55);
+  }
+
   /* ── FOOTER SLIDE ── */
-  #slide-7 {
+  #slide-8 {
     background: var(--navy);
     flex-direction: column;
     text-align: center;
@@ -811,7 +906,7 @@
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
     .slide { padding: 5rem 1.5rem 2rem; }
-    .two-col, .steps-grid, .future-grid, .societal-layout, .biblical-layout {
+    .two-col, .steps-grid, .future-grid, .societal-layout, .biblical-layout, .quantum-layout {
       grid-template-columns: 1fr;
       gap: 2rem;
     }
@@ -851,9 +946,10 @@
     <button class="nav-dot" onclick="scrollToSlide(3)" title="How It Works"></button>
     <button class="nav-dot" onclick="scrollToSlide(4)" title="Future"></button>
     <button class="nav-dot" onclick="scrollToSlide(5)" title="Society"></button>
-    <button class="nav-dot" onclick="scrollToSlide(6)" title="Biblical"></button>
+    <button class="nav-dot" onclick="scrollToSlide(6)" title="Quantum"></button>
+    <button class="nav-dot" onclick="scrollToSlide(7)" title="Biblical"></button>
   </div>
-  <div class="slide-counter" id="counter">01 / 06</div>
+  <div class="slide-counter" id="counter">01 / 07</div>
 </nav>
 
 <!-- ══════════════════════════════════════
@@ -875,6 +971,7 @@
       <span class="chapter-pill">How It Works</span>
       <span class="chapter-pill">Future Implications</span>
       <span class="chapter-pill">Societal Implications</span>
+      <span class="chapter-pill">Quantum Computing</span>
       <span class="chapter-pill">Biblical Implications</span>
     </div>
   </div>
@@ -1136,13 +1233,71 @@
 </section>
 
 <!-- ══════════════════════════════════════
-     SLIDE 6 · BIBLICAL IMPLICATIONS
+     SLIDE 6 · QUANTUM COMPUTING
 ══════════════════════════════════════ -->
-<section class="slide" id="slide-6">
+<section class="slide" id="slide-6-quantum">
+  <div class="quantum-layout">
+    <!-- LEFT -->
+    <div class="quantum-left">
+      <p class="section-number reveal">05 — Quantum Computing</p>
+      <h2 class="section-title reveal reveal-delay-1">Quantum meets <em>genomics</em></h2>
+      <p class="quantum-desc reveal reveal-delay-2">
+        Quantum computing is poised to transform genomics — making analysis faster, drug discovery
+        more precise, and personalized medicine a practical reality.
+      </p>
+
+      <div class="quantum-challenge-box reveal reveal-delay-3">
+        <h5>⚠️ Challenges Ahead</h5>
+        <p>Quantum computers are expensive, complex, and not yet widely available. Scientists are still
+        learning to apply quantum algorithms to biological data — but IBM and Google are already
+        pioneering real-world genomics applications.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT: CARDS -->
+    <div class="quantum-cards reveal reveal-delay-2">
+      <div class="quantum-card span2">
+        <div class="quantum-card-icon">⚡</div>
+        <h4>Faster Genome Sequencing & Analysis</h4>
+        <p>Analyzing DNA requires comparing billions of genetic variations. Quantum computers process
+        these possibilities simultaneously — dramatically cutting analysis time and helping scientists
+        identify genetic patterns and mutations far faster than before.</p>
+      </div>
+
+      <div class="quantum-card">
+        <div class="quantum-card-icon">💊</div>
+        <h4>Improved Drug Discovery</h4>
+        <p>By simulating how molecules interact at the atomic level, quantum computing allows scientists
+        to design drugs that target specific genetic conditions — speeding up development of
+        more effective treatments.</p>
+      </div>
+
+      <div class="quantum-card">
+        <div class="quantum-card-icon">🧬</div>
+        <h4>Personalized Medicine</h4>
+        <p>Faster, more detailed genomic analysis lets doctors tailor treatments to each patient's unique
+        DNA — making individualized treatment plans more practical and accessible than ever.</p>
+      </div>
+
+      <div class="quantum-card span2">
+        <div class="quantum-card-icon">🔭</div>
+        <h4>Solving Complex Biological Problems</h4>
+        <p>Quantum computing can model thousands of interacting genes and environmental factors with
+        unprecedented accuracy — advancing our understanding of cancer, Alzheimer's, and genetic
+        disorders, and potentially predicting disease before symptoms appear.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SLIDE 7 · BIBLICAL IMPLICATIONS
+══════════════════════════════════════ -->
+<section class="slide" id="slide-7">
   <div class="biblical-layout">
     <!-- LEFT -->
     <div>
-      <p class="section-number reveal">05 — Biblical Implications</p>
+      <p class="section-number reveal">06 — Biblical Implications</p>
       <h2 class="section-title reveal reveal-delay-1">Faith meets <em>science</em></h2>
 
       <div class="scripture-card reveal reveal-delay-2">
@@ -1197,7 +1352,7 @@
 <!-- ══════════════════════════════════════
      FOOTER
 ══════════════════════════════════════ -->
-<section class="slide" id="slide-7">
+<section class="slide" id="slide-8">
   <div>
     <p class="hero-eyebrow">Genomics Explained</p>
     <h2 class="footer-title">Thanks for watching!</h2>
@@ -1260,9 +1415,9 @@
     entries.forEach(e => {
       if (e.isIntersecting) {
         const idx = Array.from(slides).indexOf(e.target);
-        if (idx < 6) {
+        if (idx < 7) {
           dots.forEach((d,i) => d.classList.toggle('active', i===idx));
-          counter.textContent = String(idx+1).padStart(2,'0') + ' / 06';
+          counter.textContent = String(idx+1).padStart(2,'0') + ' / 07';
         }
       }
     });
@@ -1271,7 +1426,8 @@
 
   // ── Scroll to slide ──
   function scrollToSlide(n) {
-    document.getElementById('slide-'+n).scrollIntoView({ behavior:'smooth' });
+    const id = n === 6 ? 'slide-6-quantum' : 'slide-' + n;
+    document.getElementById(id).scrollIntoView({ behavior:'smooth' });
   }
 </script>
 </body>
